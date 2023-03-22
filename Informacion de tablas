@@ -1,0 +1,103 @@
+--------------------Tabla Pacientes--------------------------------------------
+CREATE TABLE Paciente
+(Cedula NUMBER(15) NOT NULL,
+NAME VARCHAR(30) NOT NULL,
+LAST_NAME VARCHAR(30) NOT NULL,
+Domicilio VARCHAR(30) NOT NULL,
+Telefono NUMBER(3) NOT NULL
+);
+INSERT INTO Paciente(Cedula,NAME,LAST_NAME,Domicilio,Telefono) 
+ VALUES(61295,'Pedro','Cabrera','av Mayor',515.123.4567,
+    	55952,'Ana','Garcia','av Arroyos',515.123.4568,
+   		 121965,'Luis','Santos','av Berrugette',515.123.4569,
+   		 54568,'Pedro','Kochar','av 12 4D',515.123.4575,
+   		 21556,'Maria','Vargas','av Fuentes',515.124.4169,
+        65892,'Jimena','Lazo','av Giraldas',515.123.30006
+    );
+
+select * from hr.employees
+    
+    drop table Paciente
+
+--------------------Tabla Doctores--------------------------------------------
+CREATE TABLE Doctor
+ID_medico NUMBER(3) NOT NULL,
+NAME VARCHAR(30) NOT NULL,
+LAST_NAME VARCHAR(30) NOT NULL,
+Especialidad VARCHAR(30) NOT NULL,
+
+INSERT INTO Doctor(ID_medico,NAME,LAST_NAME,Especialidad) 
+ VALUES(86365,'Rafael','Domenech','Cirujano',
+    	85197,'Jose Maria','Piñero','Cardiologo',
+   		 88549,'Fuensanta ','Quiroga','Dermatologa',
+   		 86834,'Leonor ','Leon','Cirugía Plástica y Reconstructiva',
+   		 83089,'Juan Diego','Rivas','Angiología y Cirugía Vascular y Endovascular',
+        88120,'Xabier ','Peris','Cirugía Pediátrica.',
+    );
+
+    
+--------------------Tabla Enfermero--------------------------------------------
+CREATE TABLE Enfermero
+ID_enfermero NUMBER(3) NOT NULL,
+NAME VARCHAR(30) NOT NULL,
+LAST_NAME VARCHAR(30) NOT NULL,
+
+INSERT INTO Enfermero(ID_enfermero,NAME,LAST_NAME) 
+ VALUES(73494,'Matias ','Navarro',
+    	76798,'Maria Pino','Romo',
+   		 71305,'Leonardo  ','Prada',
+   		 75886,'Xabier  ','Barrio',
+   		 71301,'Marco Antonio',
+        74128,'Ana  ','Maroto'
+    );
+    
+-------------Tabla Habitacion-----
+CREATE TABLE Habitacion
+Num_Habitacion NUMBER(3) NOT NULL,
+Num_piso NUMBER(3) NOT NULL,
+Num_cama NUMBER(3) NOT NULL,
+
+    INSERT INTO Habitacion(Num_Habitacion,Num_piso,Num_camaE) 
+ VALUES(429,6,86
+    	331,4,94
+    	272,8,68
+    	321,8,78
+    	298,4,54
+    	239,4,64
+    );
+
+
+CREATE TABLE Factura
+ID_FACTURA
+NUM_historialClinico NUMBER(3) NOT NULL,
+Fecha_ingreso Date
+Fecha_Salida Date
+QTY_dias 
+Num_cama NUMBER(3) NOT NULL,
+ID_medico NUMBER(3) NOT NULL,
+
+----Tabla Expediente----------
+CREATE TABLE Expediente
+ID_Expediente NUMBER(3) NOT NULL,
+NUM_historialClinico NUMBER(3) NOT NULL,
+Examenes_realizados VARCHAR(30) NOT NULL,
+Num_cama NUMBER
+
+ INSERT INTO Expediente(ID_Expediente,Examenes_realizados,Num_camaE) 
+ VALUES(
+
+----Tabla Seguro--------------------
+CREATE TABLE Seguro
+(Num_seguroSocial NUMBER(15) NOT NULL,
+Num_seguroSocial NUMBER(3) NOT NULL,
+Tipo_cobertura VARCHAR(30) NOT NULL
+    );
+
+----Tabla Servicios--------------------
+CREATE TABLE Servicios
+Cedula NUMBER(3) NOT NULL
+Cargo_AtencionMedica NUMBER(3) NOT NULL
+Cargo_Alimentacion NUMBER(3) NOT NULL,
+Cargo_Rehabilitacion NUMBER(3) NOT NULL,
+Cargo_Habitacion NUMBER(3) NOT NULL,
+,
