@@ -1,0 +1,55 @@
+CREATE TABLE Paciente
+Cedula NUMBER(3) NOT NULL,
+Num_seguroSocial NUMBER(3) NOT NULL,
+NUM_historialClinico NUMBER(3) NOT NULL,
+NAME VARCHAR(30) NOT NULL,
+LAST_NAME VARCHAR(30) NOT NULL,
+Domicilio VARCHAR(30) NOT NULL,
+Telefono NUMBER(3) NOT NULL,
+
+CREATE TABLE Doctor
+ID_medico NUMBER(3) NOT NULL,
+NAME VARCHAR(30) NOT NULL,
+LAST_NAME VARCHAR(30) NOT NULL,
+Especialidad VARCHAR(30) NOT NULL,
+
+CREATE TABLE Enfermero
+ID_enfermero NUMBER(3) NOT NULL,
+NAME VARCHAR(30) NOT NULL,
+LAST_NAME VARCHAR(30) NOT NULL,
+
+CREATE TABLE Habitacion
+Cedula NUMBER(3) NOT NULL
+Num_Habitacion NUMBER(3) NOT NULL,
+Num_piso NUMBER(3) NOT NULL,
+Num_cama NUMBER(3) NOT NULL,
+
+
+
+CREATE TABLE Factura
+Cedula NUMBER(3) NOT NULL
+NUM_historialClinico NUMBER(3) NOT NULL,
+Fecha_ingreso Date
+Fecha_Salida Date
+QTY_dias 
+Num_cama NUMBER(3) NOT NULL,
+ID_medico NUMBER(3) NOT NULL,
+
+CREATE TABLE Expediente
+Cedula NUMBER(3) NOT NULL
+NUM_historialClinico NUMBER(3) NOT NULL,
+Examenes_realizados VARCHAR(30) NOT NULL,
+Num_cama NUMBER
+
+CREATE TABLE Seguro
+Cedula NUMBER(3) NOT NULL
+Num_seguroSocial NUMBER(3) NOT NULL,
+Tipo_cobertura VARCHAR(30) NOT NULL,
+
+CREATE TABLE Servicios
+Cedula NUMBER(3) NOT NULL
+Cargo_AtencionMedica NUMBER(3) NOT NULL
+Cargo_Alimentacion NUMBER(3) NOT NULL,
+Cargo_Rehabilitacion NUMBER(3) NOT NULL,
+Cargo_Habitacion NUMBER(3) NOT NULL,
+,
