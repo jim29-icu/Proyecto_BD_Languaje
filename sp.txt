@@ -1,0 +1,75 @@
+create or replace procedure HabitacionesDisponibles(disponible)
+as 	
+	vdisponibles 
+begin
+	select N_habitaciones from habitaciones where status = "disponible"
+	dms_output.put_line("La cantidad de habitaciones es "||vdisponibles)
+end;
+execute HabitacionesDisponibles();
+
+=========================2
+create or replace procedure HabitacionesOcupadas()
+as 	
+	vocupadas
+begin
+	select N_habitaciones from habitaciones where status = "ocupadas"
+	dms_output.put_line("La cantidad de habitaciones es ocupadas son "||vocupadas
+end;
+execute HabitacionesOcupadas();
+
+===============================3
+create or replace procedure busquedaCedula(ced)
+as 	
+	vNombre varchar(15);
+	vApellido varchar(15); 
+begin
+	select first_name, last_name into vNombre,vApellido  from paciente where cedula= ced
+	dms_output.put_line("El paciente es  "||vNombre || " "|| vApellido );
+end;
+execute busquedaCedula(6345);
+======================4
+create or replace procedure busquedaNSeguro(seguro)
+as 	
+	vNombre varchar(15);
+	vApellido varchar(15); 
+	vExamenes varchar(200);
+begin
+	select first_name, last_name,examenes into vNombre,vApellido, vExamenes  from paciente where N_asegurado= seguro
+	dms_output.put_line("El paciente es  "||vNombre || " "|| vApellido || " "||vExamenes );
+end;
+execute busquedaNSeguro(6345);
+=============================5
+create or replace procedure DiasHospitalizado(seguro, Fecha_ingreso , Fecha_Salida)
+as 	vseguro num(3);
+	vNombre varchar(15);
+	vApellido varchar(15); 
+	vFecha_ingreso;
+	vFecha_Salida;
+	vDias num(3);
+begin
+	select N_seguro ,first_name, last_name,Fecha_ingreso, Fecha_Salida into vNombre,vApellido, vFecha_ingreso,vFecha_Salida,vseguro  from paciente where N_asegurado= seguro
+	dms_output.put_line("Dias del paciente  "||vNombre || " "|| vApellido || "son"||vDias );
+end;
+execute DiasHospitalizado();
+==================================6
+create or replace procedure Medicamentos(seguro)
+as 	vseguro num(3);
+	vNombre varchar(15);
+	vApellido varchar(15); 
+	vmedicamentos varchar(300);
+begin
+	select N_seguro, first_name, last_name,medicamentos into vseguro,vNombre,vApellido,vmedicamentos from paciente where N_asegurado= seguro
+	dms_output.put_line("Del paciente  "||vNombre || " "|| vApellido || "los medicamentos son"||vmedicamentos );
+end;
+execute Medicamentos(46516);
+=========================================7
+create or replace procedure DocAtendio(seguro)
+as 	vseguro num(3);
+	vNombre varchar(15);
+	vApellido varchar(15); 
+	vNombredoc varchar(300);
+begin
+	select N_seguro, first_name, last_name,Nombredoc into vseguro,vNombre,vApellido,vNombredoc from paciente where N_asegurado= seguro
+	dms_output.put_line(" paciente  "||vNombre || " "|| vApellido || "fue atendido por "||vNombredoc);
+end;
+execute DocAtendio(46516);
